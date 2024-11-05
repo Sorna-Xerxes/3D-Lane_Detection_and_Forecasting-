@@ -26,6 +26,8 @@ Further work is warranted to integrate real-time constraints while exploring lig
 | **Driving Scenario**      | Highway scenes with multiple lanes          |
 | **Conditions**            | Varying lighting, weather, and road environments |
 
+### Software Dependencies
+```bash
 import os
 import json
 import cv2
@@ -46,13 +48,20 @@ from sklearn.linear_model import RANSACRegressor
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.pipeline import make_pipeline
 import networkx as nx
+```
+### Hardware
+- The NVIDIA GeForce GTX 1650 in DELL G3 laptop for initial experiments
+- The best-performing Network was executed on the University’s High-Performance Computing (HPC) system for up to 162 epochs.
+## PRE-PROCESSING
+![image](https://github.com/user-attachments/assets/fee65124-2b35-4579-a70e-28549b3f6063)
 
 ## EXPERIMENTS
 ### Network 1
 ![image](https://github.com/user-attachments/assets/7d59dcb8-3c3d-4714-b58c-be87c9a7cbcf)
 ### Network 2
 ![image](https://github.com/user-attachments/assets/b8123147-39ad-41e4-9811-97a348c55122)
-## RESULT
+
+## RESULT (High Performance Computing)
 ![image](https://github.com/user-attachments/assets/b6ed97cc-e4a3-4054-b3dc-f6f5d435ac6e)
 | Method                                       | Dimension | Accuracy % | FP     | FN     |
 |----------------------------------------------|-----------|------------|--------|--------|
@@ -64,7 +73,7 @@ import networkx as nx
 | **My (PINet_3DResNet_ROI_Focal_LineIOU)**    | 3D        | 93.33%     | 0.0515 | 0.0822 |
 | **Previous Work (PINet_3DResNet50)**         | 3D        | 91.34%     | 0.1138 | 0.1101 |
 
-## FUUTURE WORKS
+## FUTURE WORKS
 - **Development of Hybrid Encoder-Decoder Architectures:**  Can be refined by integrating hybrid Transformer-based modules
 - **Adaptive Feature Aggregation Strategies:** Integrating adaptive feature aggregation techniques or even including ROI after FPN may perform better
 - **Incorporation of Dilated Convolutions:** At specific stages to capture a broader spatial context without significantly increasing the computational load
